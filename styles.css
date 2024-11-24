@@ -48,14 +48,15 @@ button:hover {
     width: 100%;
 }
 
-.stream {
-    flex: 1 1 calc(50% - 20px); /* Two streams per row */
-    max-width: 49%;
-    aspect-ratio: 16 / 9; /* Maintain video ratio */
-    background: #000;
-    position: relative;
+.damagis {
+    width: 70%;
+    height: 50%;
 }
-
+.lturepublic {
+    width: 70%;
+    height: 50%;
+    margin-top: -10px;
+}
 .stream iframe {
     position: absolute;
     top: 0;
