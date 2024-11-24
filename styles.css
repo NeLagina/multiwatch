@@ -51,10 +51,7 @@ iframe[src*="twitch.tv/embed"] {
 }
 
 /* YouTube Player Styling */
-#ytplayer {
-    width: 640px;
-    height: 360px;
-}
+
 
 /* Twitch Embed Styling */
 #twitch-embed {
@@ -62,7 +59,9 @@ iframe[src*="twitch.tv/embed"] {
     height: 360px;
     overflow: hidden;
 }
-
+#video {
+    display: flex ;
+}
 /* Responsive Layout */
 @media (max-width: 1200px) {
     #videos {
