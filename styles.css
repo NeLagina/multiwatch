@@ -17,7 +17,9 @@ body {
     margin: 0;
     
 }
-
+.displayno {
+    display: none;
+}
 /* Iframes Styling */
 iframe {
     border: none;
@@ -25,7 +27,7 @@ iframe {
 }
 #chat {
     display: flex;
-    margin-right: -30px;
+    margin-right: -300px;
 }
 /* Twitch Chat Styling */
 iframe[src*="twitch.tv/embed"] {
