@@ -1,0 +1,89 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e2e;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Iframes Styling */
+iframe {
+    border: none;
+    margin: 10px;
+}
+
+/* Twitch Chat Styling */
+iframe[src*="twitch.tv/embed"] {
+    height: 800px;
+    width: 250px;
+    background: #18181b;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* YouTube Player Styling */
+#ytplayer {
+    width: 640px;
+    height: 360px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Twitch Embed Styling */
+#twitch-embed {
+    margin-top: 20px;
+    width: 854px;
+    height: 480px;
+    border-radius: 5px;
+    background: #000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Layout */
+@media (max-width: 1200px) {
+    #twitch-embed {
+        width: 100%;
+        height: auto;
+    }
+
+    iframe[src*="twitch.tv/embed"] {
+        width: 100%;
+        height: auto;
+    }
+
+    #ytplayer {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px;
+    }
+
+    iframe[src*="twitch.tv/embed"] {
+        height: 300px;
+    }
+
+    #twitch-embed {
+        height: 240px;
+    }
+
+    #ytplayer {
+        height: 240px;
+    }
+}
