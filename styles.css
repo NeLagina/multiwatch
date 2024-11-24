@@ -55,8 +55,6 @@ iframe[src*="twitch.tv/embed"] {
 
 /* Twitch Embed Styling */
 #twitch-embed {
-    width: 640px;
-    height: 360px;
     overflow: hidden;
 }
 #video {
