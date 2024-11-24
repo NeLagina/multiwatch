@@ -62,36 +62,3 @@ iframe[src*="twitch.tv/embed"] {
 #video {
     display: flex ;
 }
-/* Responsive Layout */
-@media (max-width: 1200px) {
-    #videos {
-        flex-direction: column;
-    }
-
-    iframe[src*="twitch.tv/embed"] {
-        width: 100%;
-        height: auto;
-    }
-
-    #ytplayer,
-    #twitch-embed {
-        width: 100%;
-        height: auto;
-    }
-}
-
-@media (max-width: 768px) {
-    body {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    #videos iframe {
-        height: 240px;
-    }
-
-    #chat {
-        margin: 0 auto;
-        height: 300px;
-    }
-}
