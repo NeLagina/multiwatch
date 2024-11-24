@@ -17,7 +17,7 @@ body {
     padding: 20px;
 }
 
-.displayno {
+.hida {
     display: none;
 }
 
@@ -28,21 +28,24 @@ iframe {
 }
 
 /* Twitch Chat Styling */
-#chat {
+#chats {
     flex-shrink: 0; /* Prevent the chat from resizing */
     margin-left: 20px;
-    height: 800px;
-    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
+iframe {
+    height: 800px;
+    width: 400px;
+}
 
 /* Video Container Styling */
-#twitch-emebed{
+#twitch-embed {
     display: flex;
     gap: 20px; /* Space between the streams */
     justify-content: center;
     align-items: center;
     flex-grow: 1; /* Allow the streams section to grow */
 }
-
-/* YouTube Player Styling */
