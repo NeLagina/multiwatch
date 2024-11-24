@@ -11,9 +11,22 @@
 <body>
   <!-- Buttons -->
   <div id="buttons">
-    <button id="btn-cestovas" onclick="chatchange('cestovas')">Cestovas</button>
-    <button id="btn-lturepublic" onclick="chatchange('lturepublic')">lturepublic</button>
-    <button id="btn-damagis" onclick="chatchange('damagis')">Damagis</button>
+     <!--  <button onclick="chatchange('cestovas')">Cestovas</button>-->
+    <button onclick="chatchange('lturepublic')">lturepublic</button>
+    <button onclick="chatchange('damagis')">Damagis</button>
+  </div>
+
+  <!-- Streams Section -->
+  <div id="content">
+    <div class="stream">
+     <!--  <iframe src="https://player.twitch.tv/?channel=cestovas&parent=multiwatch.nelagina.lt" allowfullscreen></iframe>-->
+    </div>
+    <div class="stream">
+      <iframe src="https://player.twitch.tv/?channel=lturepublic&parent=multiwatch.nelagina.lt" allowfullscreen></iframe>
+    </div>
+    <div class="stream">
+      <iframe src="https://www.youtube.com/embed/fZJzGcXaukA?autoplay=1&origin=http://multiwatch.nelagina.lt" allowfullscreen></iframe>
+    </div>
   </div>
 
   <!-- Chats -->
@@ -25,41 +38,35 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      function chatchange(chatId) {
-        const chatMap = {
-          cestovas: 'chat1',
-          lturepublic: 'chat2',
-          damagis: 'chat3',
-        };
+      function chatchange(B) {
+        const cestovasC = document.getElementById("chat1");
+        const republicC = document.getElementById("chat2");
+        const damagisC = document.getElementById("chat3");
 
-        const buttonMap = {
-          cestovas: 'btn-cestovas',
-          lturepublic: 'btn-lturepublic',
-          damagis: 'btn-damagis',
-        };
-
-        // Update chats
-        Object.keys(chatMap).forEach(key => {
-          const chatElement = document.getElementById(chatMap[key]);
-          if (chatElement) {
-            chatElement.classList.toggle('hida', key !== chatId);
+        if (cestovasC && republicC && damagisC) {
+          if (B === "cestovas") {
+            cestovasC.classList.remove("hida");
+            republicC.classList.add("hida");
+            damagisC.classList.add("hida");
+          } else if (B === "lturepublic") {
+            cestovasC.classList.add("hida");
+            republicC.classList.remove("hida");
+            damagisC.classList.add("hida");
+          } else if (B === "damagis") {
+            cestovasC.classList.add("hida");
+            republicC.classList.add("hida");
+            damagisC.classList.remove("hida");
           }
-        });
-
-        // Update buttons
-        Object.keys(buttonMap).forEach(key => {
-          const buttonElement = document.getElementById(buttonMap[key]);
-          if (buttonElement) {
-            buttonElement.classList.toggle('active', key === chatId);
-          }
-        });
+        } else {
+          console.error("One or more elements not found");
+        }
       }
 
       // Expose the function globally
       window.chatchange = chatchange;
 
-      // Initialize: Show the first chat and highlight the first button
-      chatchange('cestovas');
+      // Initialize the first chat
+      chatchange('lturepublic');
     });
   </script>
 </body>
