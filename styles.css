@@ -10,30 +10,44 @@ body {
     background-color: #6464d1;
     color: #fff;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row; /* Side-by-side layout for streams and chat */
+    justify-content: space-between;
+    align-items: flex-start; /* Align streams and chat to the top */
     min-height: 100vh;
-    margin: 0;
-    
+    padding: 20px;
 }
+
 .displayno {
     display: none;
 }
+
 /* Iframes Styling */
 iframe {
     border: none;
     margin: 10px;
 }
-#chat {
-    display: flex;
-    margin-right: -300px;
-}
+
 /* Twitch Chat Styling */
-iframe[src*="twitch.tv/embed"] {
+#chat {
+    flex-shrink: 0; /* Prevent the chat from resizing */
+    margin-left: 20px;
     height: 800px;
-    width: 250px;
+    width: 300px;
+}
+
+iframe[src*="twitch.tv/embed"] {
+    width: 100%;
+    height: 100%;
     background: #18181b;
+}
+
+/* Video Container Styling */
+#videos {
+    display: flex;
+    gap: 20px; /* Space between the streams */
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Allow the streams section to grow */
 }
 
 /* YouTube Player Styling */
@@ -44,18 +58,15 @@ iframe[src*="twitch.tv/embed"] {
 
 /* Twitch Embed Styling */
 #twitch-embed {
-    margin-top: 20px;
-    width:fit-content;
-    height: 500px;
+    width: 640px;
+    height: 360px;
     overflow: hidden;
-    
 }
 
 /* Responsive Layout */
 @media (max-width: 1200px) {
-    #twitch-embed {
-        width: 100%;
-        height: auto;
+    #videos {
+        flex-direction: column;
     }
 
     iframe[src*="twitch.tv/embed"] {
@@ -63,7 +74,8 @@ iframe[src*="twitch.tv/embed"] {
         height: auto;
     }
 
-    #ytplayer {
+    #ytplayer,
+    #twitch-embed {
         width: 100%;
         height: auto;
     }
@@ -73,18 +85,14 @@ iframe[src*="twitch.tv/embed"] {
     body {
         flex-direction: column;
         align-items: stretch;
-        padding: 20px;
     }
 
-    iframe[src*="twitch.tv/embed"] {
+    #videos iframe {
+        height: 240px;
+    }
+
+    #chat {
+        margin: 0 auto;
         height: 300px;
-    }
-
-    #twitch-embed {
-        height: 240px;
-    }
-
-    #ytplayer {
-        height: 240px;
     }
 }
