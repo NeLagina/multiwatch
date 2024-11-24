@@ -12,15 +12,11 @@
 <body>
   
   <div id="twitch-embed">
-    <iframe id="ytplayer" type="text/html" width="1000" height="500"
+    <iframe type="text/html" width="1000" height="500"
       src="https://www.youtube.com/embed/fZJzGcXaukA?autoplay=1&origin=http://multiwatch.nelagina.lt"
       frameborder="0"></iframe>
   </div>
 
-  <!-- Load the Twitch embed JavaScript file -->
-  <script src="https://embed.twitch.tv/embed/v1.js"></script>
-
-  <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element -->
   <script type="text/javascript">
     new Twitch.Embed("twitch-embed", {
       width: 1000,
@@ -31,7 +27,7 @@
       parent: ["multiwatch.pages.dev", "multiwatch.nelagina.lt"]
     });
   </script>
-  
+  <script src="https://embed.twitch.tv/embed/v1.js"></script>
 </body>
 
 </html>
