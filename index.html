@@ -8,14 +8,22 @@
 </head>
 </head>
 <body>
-    <iframe src="https://www.twitch.tv/embed/lturepublic/chat?parent=multiwatch.nelagina.lt"
-        height="800"
-        width="250">
-    </iframe>
-    <div id="twitch-embed"></div>
-    <iframe id="ytplayer" type="text/html" width="640" height="360"
-  src="https://www.youtube.com/embed/fZJzGcXaukA?autoplay=1&origin=http://multiwatch.nelagina.lt"
-  frameborder="0"></iframe>
+    <div id="chats">
+      <iframe src="https://www.twitch.tv/embed/lturepublic/chat?parent=multiwatch.nelagina.lt"
+          height="800"
+          width="300">
+      </iframe>
+      <iframe src="https://www.twitch.tv/embed/lturepublic/chat??darkpopout&parent=multiwatch.nelagina.lt"
+          height="800"
+          width="300">
+      </iframe>
+    </div>
+    <div id="twitch-embed">
+      <iframe id="ytplayer" type="text/html" width="640" height="360"
+      src="https://www.youtube.com/embed/fZJzGcXaukA?autoplay=1&origin=http://multiwatch.nelagina.lt"
+      frameborder="0"></iframe>
+    </div>
+   
     <!-- Load the Twitch embed JavaScript file -->
     <script src="https://embed.twitch.tv/embed/v1.js"></script>
 
